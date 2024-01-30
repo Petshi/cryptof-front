@@ -1,11 +1,13 @@
-function App() {
+import React from "react";
+import {AppLayout} from "./components/layout/Layout";
+import {Flex} from "antd";
+
+export const App: React.FC = () => {
 
 
-  return (
-    <>
-        hello
-    </>
-  )
+    return (
+        <Flex gap="middle" wrap="wrap">
+            <AppLayout/>
+        </Flex>
+    )
 }
-
-export default App

@@ -1,4 +1,3 @@
-import {cryptoAssets} from "../mock/data";
 
 export interface ICoin {
     id: string,
@@ -18,14 +17,21 @@ export interface ICoin {
     redditUrl: string,
     websiteUrl: string,
     twitterUrl: string,
+    decimals?: number,
+    contractAddress?: string,
     explorers: string[],
 }
 
-export interface IAssets{
+export interface IAsset {
     id: string,
     amount: number,
-    price: number,
+    boughtPrice: number,
     date: object,
+    price?: number,
+    icon?: string,
+    priceDifference?: number,
+    grow?: boolean,
+
 }
 
 export interface ICryptoData {
@@ -38,4 +44,9 @@ export interface ICryptoData {
         hasPreviousPage: boolean,
         hasNextPage: boolean,
     }
+}
+
+export type AppContextType = {
+    cryptoData: ICryptoData[],
+    assetData: IAsset[],
 }
